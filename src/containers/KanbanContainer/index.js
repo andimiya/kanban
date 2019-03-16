@@ -11,6 +11,7 @@ class KanbanContainer extends Component {
   // Move tiles up or down a column
   // When in the to-do, can't move the tile left
   // When in the done, can't move the tile right
+
   constructor(props) {
     super(props);
 
@@ -29,7 +30,11 @@ class KanbanContainer extends Component {
   moveRight(id) {
     this.state.toDos.map((item) => {
       if (id === item.id) {
-        item.column = item.column + 1;
+        if (item.column === 3) {
+          return null;
+        } else {
+          item.column = item.column + 1;
+        }
         this.forceUpdate();
       }
     })
@@ -38,7 +43,11 @@ class KanbanContainer extends Component {
   moveLeft(id) {
     this.state.toDos.map((item) => {
       if (id === item.id) {
-        item.column = item.column - 1;
+        if (item.column === 1) {
+          return null;
+        } else {
+          item.column = item.column - 1;
+        }
         this.forceUpdate();
       }
     })
