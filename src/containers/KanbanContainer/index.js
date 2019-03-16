@@ -37,6 +37,7 @@ class KanbanContainer extends Component {
         }
         this.forceUpdate();
       }
+      return this.state.toDos;
     })
   }
 
@@ -50,6 +51,7 @@ class KanbanContainer extends Component {
         }
         this.forceUpdate();
       }
+      return this.state.toDos;
     })
   }
 
@@ -101,6 +103,9 @@ class KanbanContainer extends Component {
                   />
                 )
               }
+              else {
+                return null;
+              }
             })
           }
         </div>
@@ -113,6 +118,9 @@ class KanbanContainer extends Component {
                   <Tile data={item} key={Math.random()} moveRight={this.moveRight} moveLeft={this.moveLeft} />
                 )
               }
+              else {
+                return null;
+              }
             })
           }
         </div>
@@ -124,6 +132,8 @@ class KanbanContainer extends Component {
                 return (
                   <Tile data={item} key={Math.random()} moveRight={this.moveRight} moveLeft={this.moveLeft} />
                 )
+              } else {
+                return null;
               }
             })
           }
